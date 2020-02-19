@@ -1,0 +1,135 @@
+{% extends 'base.html' %} {% load static %} {%block content %}
+<br>
+<style>
+    .container .display-4 {
+        font-weight: bold;
+        font-size: 40px;
+    }
+</style>
+<div class="container">
+    <div class="display-4">
+        Tatuagens
+    </div>
+    <hr class="blue-gradient accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 220px;">
+</div>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 13</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 14</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 15</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 16</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 17</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 18</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 19</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 20</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 21</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 22</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 23</h5>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Tatuagem 24</h5>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div style="font-family: monospace;" class="float-right">
+        <a href="{% url 'tatuagens' %}">Voltar</a>
+    </div>
+</div>
+<br>
+<br>
+<footer class="page-footer font-small unique-color-dark ">
+    <div style="background-color: #1c2331; ">
+        <div class="container ">
+            <div class="row py-4 d-flex align-items-center ">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0 ">
+                    <h6 style="color: white; font-family: monospace; " class="mb-0 ">© Copyright 2018-2020 ReverentBarber&Tattoo
+                    </h6>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right ">
+                    <a class="fb-ic ">
+                        <a style="color: white; " href=" "><i class="fab fa-facebook-f white-text mr-4 "> </i></a>
+                    </a>
+                    <a class="li-ic ">
+                        <a style="color: white; " href=" "><i class="fab fa-linkedin-in white-text mr-4 "> </i></a>
+                    </a>
+                    <a class="ins-ic ">
+                        <a style="color: white; " href=" "><i class="fab fa-instagram white-text "> </i></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %} {% load static %} {%block content %}
+<br>
+<style>
+    .container .display-4 {
+        font-weight: bold;
+        font-size: 40px;
+    }
+    
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid green;
+        margin: 1em 0;
+        padding: 0;
+    }
+</style>
+<div class="container">
+    <div class="display-4">
+        Serviços
+    </div>
+    <hr class="text-primary accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 200px;">
+
+</div>
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <a href="">
+                    <h5 class="card-title">Cortes & Barbas</h5>
+                </a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <a href="">
+                    <h5 class="card-title">Tatuagens</h5>
+                </a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{% static 'images/background-img.webp' %}" alt="Card image cap">
+            <div class="card-body">
+                <a href="">
+                    <h5 class="card-title">Desenhos</h5>
+                </a>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="page-footer font-small unique-color-dark">
+    <div class="container text-center text-md-left mt-5">
+        <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Reverent Barber Tattoo</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>alguma frase chamativa algo relacionado com a tua vida e emprego, teu talendo aqui vc ver o que tu quer escrever</p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <h6 class="text-uppercase font-weight-bold">Serviços</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <a href="#">Cortes & Barbas</a>
+                </p>
+                <p>
+                    <a href="#">Tatuagens</a>
+                </p>
+                <p>
+                    <a href="#">Desenhos</a>
+                </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase font-weight-bold">Contact</h6>
+                <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                <p>
+                    <i class="fas fa-home mr-3"></i> Lages, SC</p>
+                <p>
+                    <i class="fas fa-envelope mr-3"></i> gustavo@gmail.com</p>
+                <p>
+                    <i class="fas fa-phone mr-3"></i> +55 (49) 99996-2755</p>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #1c2331;">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 style="color: white; font-family:  monospace;" class="mb-0 ">© Copyright 2018-2020 ReverentBarber&Tattoo
+                    </h6>
+                </div>
+                <div class="col-md-6 col-lg-7 text-center text-md-right ">
+                    <a class="fb-ic ">
+                        <a style="color: white;" href=" "><i class="fab fa-facebook-f white-text mr-4 "> </i></a>
+                    </a>
+                    <a class="li-ic ">
+                        <a style="color: white;" href=""><i class="fab fa-linkedin-in white-text mr-4 "> </i></a>
+                    </a>
+                    <a class="ins-ic ">
+                        <a style="color: white;" href=""><i class="fab fa-instagram white-text "> </i></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+{% endblock %}

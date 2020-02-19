@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% load crispy_forms_tags %} {% block content %}
+
+<head>
+    <title>{%block title %} Logar {% endblock %}</title>
+</head>
+<style>
+    .container h2 {
+        font-size: 300%;
+        font-family: algerian, courier;
+        line-height: 80%;
+    }
+    
+    .asteriskField {
+        display: none;
+    }
+    
+    form .alert ul li {
+        list-style: none;
+    }
+    
+    form .alert ul {
+        padding: 0;
+        margin: 0;
+    }
+    
+    .row .btn {
+        width: 150px;
+    }
+</style>
+
+<body>
+    <div style="margin-top: 40px;" class="container">
+        <div class="row justify-content-center">
+            <h2>Logar</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %} {{form|crispy}}
+                            <div class="row justify-content-center">
+                                <input class="btn btn-dark" type="submit" value="LOGAR">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}

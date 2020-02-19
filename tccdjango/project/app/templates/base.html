@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/ba7741d83b.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>{% block title %} Home {% endblock %}</title>
+</head>
+
+<style>
+    .navbar {
+        background-color: #1c2331;
+    }
+    
+    .navbar .navbar-brand {
+        color: white;
+        font-weight: bold;
+    }
+    
+    .navbar-nav .nav-link {
+        color: white;
+        font-family: monospace;
+        font-size: 14px;
+    }
+    
+    .form-inline {
+        font-family: monospace;
+    }
+    
+    .carousel-inner .carousel-item {
+        height: 310px;
+        max-width: 100%;
+    }
+    
+    .carousel-inner .carousel-item .img {
+        height: 300px;
+        max-width: 100% !important;
+    }
+    
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid green;
+        margin: 1em 0;
+        padding: 0;
+    }
+</style>
+{% block header %}
+<header>
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Reverent Barber Tattoo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'home' %}">Inicio<span class="sr-only"></span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'portfolio' %}">Perfil</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Serviços
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-center" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'cortes' %}">Cortes & Barbas</a>
+                            <a class="dropdown-item" href="{% url 'tatuagens' %}">Tatuagens</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'desenhos' %}">Desenhos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'produto' %}">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'contato' %}">Contato</a>
+                    </li>
+                </ul>
+                {% if user.is_authenticated %}
+                <ul class="navbar-nav mr">
+                    <li class="nav-item dropdown">
+                        <a style="color: white; text-transform: capitalize;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{user.username}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'perfil' %}">Perfil</a>
+                            <a class="dropdown-item" href="{% url 'password_change' %}">Alter Senha</a>
+                            <a class="dropdown-item" href="{% url 'agendamento' %}">Cadastrar um Agendamento</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'logout' %}">Sair</a>
+                        </div>
+                    </li>
+                </ul>
+                {% else %}
+                <form class="form-inline my-2 my-lg-0">
+                    <a href="{% url 'login' %}" class="btn btn-outline-success my-2 ml-2" type="submit">Logar</button></a>
+                    <a href="{% url 'singup' %}" class="btn btn-outline-success my-2 ml-2" type="submit">Registrar-se</button></a>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators ">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item ">
+                <img class="d-block w-100" src="{% static 'images/background-img.webp' %}" alt="Primeiro Slide">
+            </div>
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="{% static 'images/background-img.webp' %}" alt="Primeiro Slide">
+            </div>
+            <div class="carousel-item ">
+                <img class="d-block w-100" src="{% static 'images/background-img.webp' %}" alt="Primeiro Slide">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+</body>
+{%block content %} {%endblock%}
+
+</html>
